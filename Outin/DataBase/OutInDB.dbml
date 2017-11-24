@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Outin" Class="OutInDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ADOLFOROJAS\SQLEXPRESS;Initial Catalog=Outin;Integrated Security=True" SettingsObjectName="DataBase.Properties.Settings" SettingsPropertyName="OutinConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CambioCliente" Member="CambioCliente">
+    <Type Name="CambioCliente">
+      <Column Name="ca_idcambio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ca_idlista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ca_movimientoinventario" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Association Name="ListaChequeo_CambioCliente" Member="ListaChequeo" ThisKey="ca_idlista" OtherKey="li_idlista" Type="ListaChequeo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venta" Member="Venta">
+    <Type Name="Venta">
+      <Column Name="ve_idventa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ve_fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ve_cantidadproducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categoria" Member="Categoria">
+    <Type Name="Categoria">
+      <Column Name="cat_idcategoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_nombre" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Association Name="Categoria_Producto" Member="Producto" ThisKey="cat_idcategoria" OtherKey="pd_idcategoria" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DanoDevolucion" Member="DanoDevolucion">
+    <Type Name="DanoDevolucion">
+      <Column Name="da_iddañodevolucion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="da_movimientoinventario" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="da_tipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetalleCompra" Member="DetalleCompra">
+    <Type Name="DetalleCompra">
+      <Column Name="dtl_idordencompra" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dtl_cantidadproducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DetalleCompra_OrdenCompra" Member="OrdenCompra" ThisKey="dtl_idordencompra" OtherKey="or_detalle" Type="OrdenCompra" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Empleado" Member="Empleado">
+    <Type Name="Empleado">
+      <Column Name="em_identificacion" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="em_fechanacimiento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="em_nombre" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="em_tipoid" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="em_direccion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="em_cargo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="em_contacto" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="em_fechaentrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="em_estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Empleado_MovimientoInventario" Member="MovimientoInventario" ThisKey="em_identificacion" OtherKey="mov_identificacionEmp" Type="MovimientoInventario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Items" Member="Items">
+    <Type Name="Items">
+      <Column Name="it_iditems" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="it_observacion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="it_texto" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="it_calificacion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Items_ListaChequeo" Member="ListaChequeo" ThisKey="it_iditems" OtherKey="li_iditems" Type="ListaChequeo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ListaChequeo" Member="ListaChequeo">
+    <Type Name="ListaChequeo">
+      <Column Name="li_idlista" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="li_fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="li_iditems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="li_serie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="li_pregunta" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="li_calificacion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ListaChequeo_CambioCliente" Member="CambioCliente" ThisKey="li_idlista" OtherKey="ca_idlista" Type="CambioCliente" />
+      <Association Name="ListaChequeo_OrdenCompra" Member="OrdenCompra" ThisKey="li_idlista" OtherKey="or_lista" Type="OrdenCompra" />
+      <Association Name="Items_ListaChequeo" Member="Items" ThisKey="li_iditems" OtherKey="it_iditems" Type="Items" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MovimientoInventario" Member="MovimientoInventario">
+    <Type Name="MovimientoInventario">
+      <Column Name="mov_idmovimiento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mov_identificacionEmp" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="mov_idproducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mov_idtipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mov_fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="mov_fechavencimiento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="mov_precioventa" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="mov_ubicacion" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="mov_preciocompra" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="mov_cantidadproductos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mov_total" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="Empleado_MovimientoInventario" Member="Empleado" ThisKey="mov_identificacionEmp" OtherKey="em_identificacion" Type="Empleado" IsForeignKey="true" />
+      <Association Name="Producto_MovimientoInventario" Member="Producto" ThisKey="mov_idproducto" OtherKey="pd_idproducto" Type="Producto" IsForeignKey="true" />
+      <Association Name="Tipo_MovimientoInventario" Member="Tipo" ThisKey="mov_idtipo" OtherKey="ti_idtipo" Type="Tipo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrdenCompra" Member="OrdenCompra">
+    <Type Name="OrdenCompra">
+      <Column Name="or_idordencompra" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="or_detalle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="or_lista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="or_idproveedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="or_fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="or_total" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="DetalleCompra_OrdenCompra" Member="DetalleCompra" ThisKey="or_detalle" OtherKey="dtl_idordencompra" Type="DetalleCompra" IsForeignKey="true" />
+      <Association Name="ListaChequeo_OrdenCompra" Member="ListaChequeo" ThisKey="or_lista" OtherKey="li_idlista" Type="ListaChequeo" IsForeignKey="true" />
+      <Association Name="Proveedor_OrdenCompra" Member="Proveedor" ThisKey="or_idproveedor" OtherKey="pro_idproveedor" Type="Proveedor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Producto" Member="Producto">
+    <Type Name="Producto">
+      <Column Name="pd_idproducto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pd_nombre" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="pd_marca" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pd_stockmin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pd_stockmax" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pd_peso" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="pd_estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pd_idcategoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Producto_MovimientoInventario" Member="MovimientoInventario" ThisKey="pd_idproducto" OtherKey="mov_idproducto" Type="MovimientoInventario" />
+      <Association Name="Categoria_Producto" Member="Categoria" ThisKey="pd_idcategoria" OtherKey="cat_idcategoria" Type="Categoria" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proveedor" Member="Proveedor">
+    <Type Name="Proveedor">
+      <Column Name="pro_idproveedor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pro_estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pro_contacto" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="pro_direccion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_nombreempresa" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Association Name="Proveedor_OrdenCompra" Member="OrdenCompra" ThisKey="pro_idproveedor" OtherKey="or_idproveedor" Type="OrdenCompra" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo" Member="Tipo">
+    <Type Name="Tipo">
+      <Column Name="ti_idtipo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ti_nombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="ti_descripcion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Association Name="Tipo_MovimientoInventario" Member="MovimientoInventario" ThisKey="ti_idtipo" OtherKey="mov_idtipo" Type="MovimientoInventario" />
+    </Type>
+  </Table>
+</Database>
