@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+footer{
+	position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+		background:#252932;
+}
+
+a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+

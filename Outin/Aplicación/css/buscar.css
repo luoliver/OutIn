@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+		
+
+		#buscar{
+			padding: 15px;
+			border-radius: 0px 10px 10px 0px ;
+			outline:none;
+			background: #589A37;
+			border: none;
+			cursor: pointer;
+		}
+		
+		.caja{
+			padding: 15px;
+			border-radius: 4px;
+			outline: none;
+			border-color:#589A37; 
+		}
+#menbuscar{
+	padding: 15px;
+}
+		
+	
+#cuadropro{
+	max-width: 900px;
+	width: 500px;
+    margin: 0 auto;
+}

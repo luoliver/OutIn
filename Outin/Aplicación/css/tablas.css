@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+table{
+	background: #f2f2f2;
+}
+td{
+	border-bottom: 2px solid black;
+	padding: 14px;
+}
+
+#tabla{
+	padding-top: 35px;
+}
