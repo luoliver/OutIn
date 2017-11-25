@@ -78,6 +78,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="producto_form.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="MasterOutIn.Master.designer.cs">
       <DependentUpon>MasterOutIn.Master</DependentUpon>
+    </Compile>
+    <Compile Include="producto_form.aspx.cs">
+      <DependentUpon>producto_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="producto_form.aspx.designer.cs">
+      <DependentUpon>producto_form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForm1.aspx.cs">
