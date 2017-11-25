@@ -11,4 +11,17 @@ namespace Negocio
     {
         OutInDBDataContext data = new OutInDBDataContext();
     }
+    public bool insertarProducto()
+    {
+        try
+        {
+            return true;
+        }
+        catch (Exception)
+        {
+
+            return false;
+        }
+        
+    }
 }
