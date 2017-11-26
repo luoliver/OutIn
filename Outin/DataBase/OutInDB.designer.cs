@@ -204,6 +204,188 @@ namespace DataBase
 				return this.GetTable<Tipo>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarCambioCliente")]
+		public int insertarCambioCliente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> lista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string mov)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lista, mov);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarTipo")]
+		public int modificarTipo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, descripcion, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarCategoria")]
+		public int insertarCategoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nom)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarDañoDevolucion")]
+		public int insertarDañoDevolucion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string mov, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string tipo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mov, tipo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarDetalleCompra")]
+		public int insertarDetalleCompra([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cant)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cant);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarEmpleado")]
+		public int insertarEmpleado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nacimiento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dir, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nacimiento, nombre, tipo, dir, cargo, contacto, entrada, estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarListaChequeo")]
+		public int insertarListaChequeo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> items, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> serie, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> calificacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha, items, serie, pregunta, calificacion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarMoviInventario")]
+		public int insertarMoviInventario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> identificacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fechaVenc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> precioVenta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string ubicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> precioCompra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> total)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), identificacion, producto, tipo, fecha, fechaVenc, precioVenta, ubicacion, precioCompra, cantProducto, total);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarOrdenCompra")]
+		public int insertarOrdenCompra([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> detalle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> lista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> proveedor, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> total)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), detalle, lista, proveedor, fecha, total);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarProducto")]
+		public int insertarProducto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMin, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMax, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> peso, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, marca, stockMin, stockMax, peso, estado, categoria);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarProveedor")]
+		public int insertarProveedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nomEmpresa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado, contacto, direccion, nomEmpresa, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarTipo")]
+		public int insertarTipo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, descripcion, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarVenta")]
+		public int insertarVenta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha, cantidad, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insetarItems")]
+		public int insetarItems([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string observacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string texto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> calificacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), observacion, texto, calificacion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modficarVenta")]
+		public int modficarVenta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha, cantidad, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarCambioCliente")]
+		public int modificarCambioCliente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> lista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string mov, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lista, mov, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarCategoria")]
+		public int modificarCategoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nom, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nom, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarDañoDevolucion")]
+		public int modificarDañoDevolucion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string mov, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mov, tipo, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarDetalleCompra")]
+		public int modificarDetalleCompra([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cant, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cant, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarEmpleado")]
+		public int modificarEmpleado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nacimiento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dir, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nacimiento, nombre, tipo, dir, cargo, contacto, entrada, estado, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarItems")]
+		public int modificarItems([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string observacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string texto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> calificacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), observacion, texto, calificacion, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarListaChequeo")]
+		public int modificarListaChequeo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> items, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> serie, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> calificacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha, items, serie, pregunta, calificacion, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarMoviInventario")]
+		public int modificarMoviInventario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> identificacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fechaVenc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> precioVenta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string ubicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> precioCompra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), identificacion, producto, tipo, fecha, fechaVenc, precioVenta, ubicacion, precioCompra, cantProducto, total, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarOrdenCompra")]
+		public int modificarOrdenCompra([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> detalle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> lista, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> proveedor, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> total, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), detalle, lista, proveedor, fecha, total, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarProducto")]
+		public int modificarProducto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMin, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMax, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> peso, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, marca, stockMin, stockMax, peso, estado, categoria, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.modificarProveedor")]
+		public int modificarProveedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nomEmpresa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado, contacto, direccion, nomEmpresa, id);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CambioCliente")]

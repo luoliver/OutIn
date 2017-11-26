@@ -10,18 +10,26 @@ namespace Negocio
     public class controlProductos : Respuesta
     {
         OutInDBDataContext data = new OutInDBDataContext();
-    }
-    public bool insertarProducto()
-    {
-        try
-        {
-            return true;
-        }
-        catch (Exception)
-        {
 
-            return false;
-        }
         
+
+        public bool insertarProducto(string nombre,string marca,int stockMin, int stockMax,double peso,string estado,int categoria)
+        {
+            try
+            {
+                data.insertarProducto(nombre, marca, stockMin, stockMax, peso, estado, categoria);
+                Codigo = "OK";
+                Rta = "Se ingreso el producto correctamente";
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Codigo = "Error";
+                Rta = ex.Message;
+                return false;
+            }
+
+        }
     }
+    
 }

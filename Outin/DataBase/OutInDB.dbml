@@ -135,4 +135,202 @@
       <Association Name="Tipo_MovimientoInventario" Member="MovimientoInventario" ThisKey="ti_idtipo" OtherKey="mov_idtipo" Type="MovimientoInventario" />
     </Type>
   </Table>
+  <Function Name="dbo.insertarCambioCliente" Method="insertarCambioCliente">
+    <Parameter Name="lista" Type="System.Int32" DbType="Int" />
+    <Parameter Name="mov" Type="System.String" DbType="VarChar(60)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarTipo" Method="modificarTipo">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarCategoria" Method="insertarCategoria">
+    <Parameter Name="nom" Type="System.String" DbType="VarChar(70)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarDañoDevolucion" Method="insertarDañoDevolucion">
+    <Parameter Name="mov" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarDetalleCompra" Method="insertarDetalleCompra">
+    <Parameter Name="cant" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarEmpleado" Method="insertarEmpleado">
+    <Parameter Name="nacimiento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="dir" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cargo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contacto" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="entrada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarListaChequeo" Method="insertarListaChequeo">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="items" Type="System.Int32" DbType="Int" />
+    <Parameter Name="serie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pregunta" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="calificacion" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarMoviInventario" Method="insertarMoviInventario">
+    <Parameter Name="identificacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fechaVenc" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="precioVenta" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="ubicacion" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="precioCompra" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="cantProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="total" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarOrdenCompra" Method="insertarOrdenCompra">
+    <Parameter Name="detalle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lista" Type="System.Int32" DbType="Int" />
+    <Parameter Name="proveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="total" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarProducto" Method="insertarProducto">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="marca" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stockMin" Type="System.Int32" DbType="Int" />
+    <Parameter Name="stockMax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="peso" Type="System.Double" DbType="Float" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="categoria" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarProveedor" Method="insertarProveedor">
+    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="contacto" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nomEmpresa" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarTipo" Method="insertarTipo">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarVenta" Method="insertarVenta">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insetarItems" Method="insetarItems">
+    <Parameter Name="observacion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="texto" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="calificacion" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modficarVenta" Method="modficarVenta">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarCambioCliente" Method="modificarCambioCliente">
+    <Parameter Name="lista" Type="System.Int32" DbType="Int" />
+    <Parameter Name="mov" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarCategoria" Method="modificarCategoria">
+    <Parameter Name="nom" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarDañoDevolucion" Method="modificarDañoDevolucion">
+    <Parameter Name="mov" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarDetalleCompra" Method="modificarDetalleCompra">
+    <Parameter Name="cant" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarEmpleado" Method="modificarEmpleado">
+    <Parameter Name="nacimiento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="dir" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cargo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contacto" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="entrada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarItems" Method="modificarItems">
+    <Parameter Name="observacion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="texto" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="calificacion" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarListaChequeo" Method="modificarListaChequeo">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="items" Type="System.Int32" DbType="Int" />
+    <Parameter Name="serie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pregunta" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="calificacion" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarMoviInventario" Method="modificarMoviInventario">
+    <Parameter Name="identificacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fechaVenc" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="precioVenta" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="ubicacion" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="precioCompra" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="cantProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="total" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarOrdenCompra" Method="modificarOrdenCompra">
+    <Parameter Name="detalle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lista" Type="System.Int32" DbType="Int" />
+    <Parameter Name="proveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="total" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarProducto" Method="modificarProducto">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="marca" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stockMin" Type="System.Int32" DbType="Int" />
+    <Parameter Name="stockMax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="peso" Type="System.Double" DbType="Float" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="categoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarProveedor" Method="modificarProveedor">
+    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="contacto" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nomEmpresa" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
