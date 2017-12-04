@@ -44,7 +44,7 @@ go
 
 -- DanoDevolucion
 
-create procedure insertarDañoDevolucion
+create procedure insertarDaÃ±oDevolucion
 (@mov varchar(60),@tipo varchar(20))
 as
 begin
@@ -74,11 +74,11 @@ go
 --Movimiento Inventario
 
 create procedure insertarMoviInventario 
-(@identificacion int, @producto int, @tipo int,@fecha date,@fechaVenc date,@precioVenta money,@ubicacion varchar(60),@precioCompra money,@cantProducto int, @total money)
+(@identificacion int, @producto int, @tipo int,@fecha date,@fechaVenc date,@ubicacion varchar(60),@cantidad int)
 as
 begin 
-	insert into MovimientoInventario( mov_identificacionEmp ,mov_idproducto ,mov_idtipo,mov_fecha,mov_fechavencimiento,mov_precioventa,mov_ubicacion,mov_preciocompra,mov_cantidadproductos,mov_total)
-	values (@identificacion,@producto,@tipo,@fecha,@fechaVenc,@precioVenta,@ubicacion,@precioCompra,@cantProducto,@total)
+	insert into MovimientoInventario( mov_identificacionEmp ,mov_idproducto ,mov_idtipo,mov_fecha,mov_fechavencimiento,mov_ubicacion,mov_cantidadproductos)
+	values (@identificacion,@producto,@tipo,@fecha,@fechaVenc,@ubicacion,@cantidad)
 end
 go
 --- Orden de Compra
@@ -94,11 +94,11 @@ go
 -- Producto
 
 create procedure insertarProducto
-(@nombre varchar(70),@marca varchar(50),@stockMin int,@stockMax int,@peso float,@estado varchar(50),@categoria int)
+(@nombre varchar(70),@marca varchar(50),@stockMin int,@stockMax int,@peso float,@preCompra money,@preVenta money,@estado varchar(50),@cant int = null,@categoria int)
 as
 begin
-	insert into Producto ( pd_nombre,pd_marca,pd_stockmin,pd_stockmax,pd_peso,pd_estado,pd_idcategoria)
-	values(@nombre,@marca,@stockMin,@stockMax,@peso,@estado,@categoria)
+	insert into Producto ( pd_nombre,pd_marca,pd_stockmin,pd_stockmax,pd_peso,pd_preciocompra,mov_precioventa,pd_estado,pd_cantidadproductos,pd_idcategoria)
+	values(@nombre,@marca,@stockMin,@stockMax,@peso,@preCompra,@preVenta,@estado,@cant,@categoria)
 end
 go
 -- Proveedor
@@ -122,7 +122,7 @@ end
 go
 -- Venta
 
-create Procedure modficarVenta (@fecha date,@cantidad int,@id int)
+create Procedure insertarVenta (@fecha date,@cantidad int,@id int)
 as
 begin	
 	insert into Venta ( ve_fecha,ve_cantidadproducto)
