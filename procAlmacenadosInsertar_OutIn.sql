@@ -44,7 +44,7 @@ go
 
 -- DanoDevolucion
 
-create procedure insertarDañoDevolucion
+create procedure insertarDaÃ±oDevolucion
 (@mov varchar(60),@tipo varchar(20))
 as
 begin
