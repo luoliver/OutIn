@@ -42,6 +42,18 @@
                     <td>
                         <asp:TextBox ID="txt_StockMax" runat="server"></asp:TextBox></td>
                 </tr>
+                 <tr>
+                    <td>
+                        <asp:Label ID="lbl_preCompra" runat="server" Text="Precio de Compra" for="txt_preCompra"></asp:Label></td>
+                    <td>
+                        <asp:TextBox ID="txt_preCompra" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl_preVenta" runat="server" Text="Precio de Venta" for="txt_preVenta"></asp:Label></td>
+                    <td>
+                        <asp:TextBox ID="txt_preVenta" runat="server"></asp:TextBox></td>
+                </tr>
                 <tr>
                     <td>
                         <asp:Label ID="lbl_peso" runat="server" Text="Peso" for="txt_Peso"></asp:Label></td>
@@ -54,6 +66,13 @@
                     <td>
                         <asp:DropDownList ID="DropDownList_Estado" runat="server">
                         </asp:DropDownList></td>
+                </tr>
+                 <tr>
+                    <td>
+                        <asp:Label ID="lblCantidad" runat="server" Text="Cantidad de Productos" for="txt_cantidad"></asp:Label></td>
+                    <td>
+                        <asp:TextBox ID="txt_cantidad" runat="server"></asp:TextBox>
+                    </td>
                 </tr>
                 <tr>
                     <td>

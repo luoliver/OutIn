@@ -85,12 +85,20 @@
     <Content Include="imagenes\logo.png" />
     <Content Include="index.html" />
     <Content Include="js\navegar.js" />
+    <Content Include="login.aspx" />
     <Content Include="paginas\Producto\form-producto.aspx" />
     <Content Include="paginas\gestionar.html" />
     <Content Include="paginas\modal.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="paginas\Producto\form-producto.aspx.cs">
       <DependentUpon>form-producto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
