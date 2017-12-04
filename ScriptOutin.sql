@@ -58,7 +58,7 @@ or_fecha date not null,
 or_total money not null)   
 
 create table DanoDevolucion(
-da_iddañodevolucion int identity not null primary key,
+da_iddaÃ±odevolucion int identity not null primary key,
 da_movimientoinventario varchar(60) not null,
 da_tipo varchar(20)not null)
 
@@ -87,7 +87,10 @@ pd_marca varchar(50),
 pd_stockmin int not null,
 pd_stockmax int not null,
 pd_peso float not null, 
+mov_precioventa money not null,
+pd_preciocompra money not null,
 pd_estado varchar(50) not null,
+pd_cantidadproductos int,
 pd_idcategoria int FOREIGN KEY (pd_idcategoria) REFERENCES Categoria(cat_idcategoria))
 
 
@@ -98,10 +101,7 @@ mov_idmovimiento int identity not null primary key,
 /*(FK)*/mov_idtipo int FOREIGN KEY (mov_idtipo) REFERENCES Tipo(ti_idtipo),
 mov_fecha date not null,
 mov_fechavencimiento date not null,
-mov_precioventa money not null,
 mov_ubicacion varchar(60) not null,
-mov_preciocompra money not null,
 mov_cantidadproductos int,
 mov_total money not null)
-
 go
