@@ -20,7 +20,7 @@ namespace Aplicación.paginas
 
         protected void btn_insertarProducto_Click(object sender, EventArgs e)
         {
-            producto.insertarProducto(txt_Nombre.Text, txt_Marca.Text, Convert.ToInt32(txt_StockMin.Text), Convert.ToInt32(txt_StockMax.Text), Convert.ToInt64(txt_Peso.Text), DropDownList_Estado.Text, Convert.ToInt32(DropDownList_Categoria.Text));
+            //producto.insertarProducto(txt_Nombre.Text, txt_Marca.Text, Convert.ToInt32(txt_StockMin.Text), Convert.ToInt32(txt_StockMax.Text), Convert.ToInt64(txt_Peso.Text), DropDownList_Estado.Text, Convert.ToInt32(DropDownList_Categoria.Text));
         }
     }
 }

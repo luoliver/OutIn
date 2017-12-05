@@ -28,5 +28,21 @@ namespace Negocio
             }
 
         }
+        public validarUsuarioResult validarEmpleado(string usuario, string contrasena)
+        {
+            try
+            {
+                validarUsuarioResult emp = data.validarUsuario(usuario, contrasena).FirstOrDefault();
+                Codigo = "OK";
+                Rta = "Se ingreso el empleado correctamente";
+                return emp;
+            }
+            catch (Exception ex)
+            {
+                Codigo = "Error";
+                Rta = ex.Message;
+                return null;
+            }
+        }
     }
 }

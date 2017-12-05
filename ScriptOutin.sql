@@ -90,7 +90,7 @@ pd_peso float not null,
 mov_precioventa money not null,
 pd_preciocompra money not null,
 pd_estado varchar(50) not null,
-pd_cantidadproductos int,
+pd_cantidadproductos int default 0 not null,
 pd_idcategoria int FOREIGN KEY (pd_idcategoria) REFERENCES Categoria(cat_idcategoria))
 
 
@@ -102,6 +102,6 @@ mov_idmovimiento int identity not null primary key,
 mov_fecha date not null,
 mov_fechavencimiento date not null,
 mov_ubicacion varchar(60) not null,
-mov_cantidadproductos int,
-mov_total money not null)
+mov_cantidadproductos int not null
+)
 go
