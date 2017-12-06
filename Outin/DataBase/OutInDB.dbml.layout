@@ -74,7 +74,7 @@
         <elementListCompartment Id="fb9f409c-ce99-4529-8f16-a2c8251e26f6" absoluteBounds="9.515, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 4.69314697265625); (5.97916666666667 : 4.69314697265625 : JumpStart); (6.14583333333333 : 4.69314697265625 : JumpEnd); (6.25 : 4.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.69314697265625); (6.25 : 4.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/OutInDBDataContext/ListaChequeo/ListaChequeo_CambioCliente" />
       <nodes>
         <classShapeMoniker Id="1d3d2c40-d551-4aa9-809f-55c923f6276a" />
@@ -129,14 +129,14 @@
         <elementListCompartment Id="657a51d4-ecd1-4be8-a791-4b8334293b49" absoluteBounds="9.39, 6.9600000000000009, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.375 : 8.04890055338542); (12.25 : 8.04890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.375 : 8.04890055338542); (12.25 : 8.04890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/OutInDBDataContext/Producto/Producto_MovimientoInventario" />
       <nodes>
         <classShapeMoniker Id="11bad448-1378-46f7-ab3f-744bdf55b53b" />
         <classShapeMoniker Id="f0936e0a-9181-4d3f-9cad-fcfa6cf12bd3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 8.09699625651042); (9.375 : 8.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.75 : 8.09699625651042); (9.375 : 8.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/OutInDBDataContext/Categoria/Categoria_Producto" />
       <nodes>
         <classShapeMoniker Id="c2a703b2-f7aa-40b1-a89f-3019e7fd7f4c" />

@@ -185,14 +185,6 @@
     <Parameter Name="total" Type="System.Decimal" DbType="Money" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.insertarProveedor" Method="insertarProveedor">
-    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="contacto" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="nomEmpresa" Type="System.String" DbType="VarChar(70)" />
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.insertarTipo" Method="insertarTipo">
     <Parameter Name="nombre" Type="System.String" DbType="VarChar(60)" />
     <Parameter Name="descripcion" Type="System.String" DbType="VarChar(60)" />
@@ -257,6 +249,13 @@
     <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="cant" Type="System.Int32" DbType="Int" />
     <Parameter Name="categoria" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarProveedor" Method="insertarProveedor">
+    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="contacto" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="nomEmpresa" Type="System.String" DbType="VarChar(70)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

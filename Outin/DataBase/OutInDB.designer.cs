@@ -261,13 +261,6 @@ namespace DataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarProveedor")]
-		public int insertarProveedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nomEmpresa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado, contacto, direccion, nomEmpresa, id);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarTipo")]
 		public int insertarTipo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
 		{
@@ -307,6 +300,13 @@ namespace DataBase
 		public int insertarProducto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMin, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMax, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> peso, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> preCompra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> preVenta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cant, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, marca, stockMin, stockMax, peso, preCompra, preVenta, estado, cant, categoria);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarProveedor")]
+		public int insertarProveedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nomEmpresa)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado, contacto, direccion, nomEmpresa);
 			return ((int)(result.ReturnValue));
 		}
 	}
