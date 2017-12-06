@@ -84,6 +84,7 @@
     <Content Include="imagenes\logo-caja.png" />
     <Content Include="imagenes\logo.png" />
     <Content Include="index.html" />
+    <Content Include="Index_Full.aspx" />
     <Content Include="js\navegar.js" />
     <Content Include="login.aspx" />
     <Content Include="paginas\Empleado\form-Empleado.aspx" />
@@ -96,6 +97,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Index_Full.aspx.cs">
+      <DependentUpon>Index_Full.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index_Full.aspx.designer.cs">
+      <DependentUpon>Index_Full.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

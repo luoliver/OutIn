@@ -14,21 +14,35 @@ namespace Aplicación
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["usuario"]!=null)
+            {
+                Response.Redirect("Index_Full.aspx");
+            }
         }
 
         protected void btn_ingresar_Click(object sender, EventArgs e)
         {
-            controlEmpleado emp = new controlEmpleado();
+            try
+            {
+                 controlEmpleado emp = new controlEmpleado();
             if ((emp.validarEmpleado(txt_usuario.Text, txt_contrasena.Text)) != null)
             {
-                Session["usuario"] = emp.validarEmpleado(txt_usuario.Text, txt_contrasena.Text);
-                lbl_info.Text = "Acediste correctamente";
+                validarUsuarioResult emp1 = emp.validarEmpleado(txt_usuario.Text, txt_contrasena.Text);
+                Session["usuario"] = emp1;
+                lbl_info.Text = "Acediste correctamente " + emp1.em_nombre;
+                    Response.Redirect("Index_Full.aspx");
             }
             else
             {
                 lbl_info.Text = "Error";
             }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
             
         }
     }
