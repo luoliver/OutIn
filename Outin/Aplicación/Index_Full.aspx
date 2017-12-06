@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/tablas.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/buscar.css">
-
+    
 <title>Outin</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
 				<a href="#" id="nuevo">Nuevo producto</a>
 				<a href="#" id="gestionar">Gestionar productos</a>
 				<a href="#" id="cambios">Cambios</a>
-                <asp:button runat="server" text="CerrarSession" OnClick="Unnamed1_Click" />
+                <asp:button runat="server" text="CerrarSession" OnClick="Unnamed1_Click" ID="btn_cerSession" />
 			</nav>
 		</div>
 	</header>

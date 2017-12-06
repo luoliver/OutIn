@@ -45,9 +45,28 @@ header nav a {
 	-o-transition:all 500ms ease;
 	transition:all 500ms ease;
 }
- 
+
+#btn_cerSession {
+    border: none;
+    outline: none;
+    display: inline-block;
+    background-color: #252932;
+    color: #6A666A;
+    text-decoration: none;
+    padding: 10px 20px;
+    line-height: normal;
+    font-size: 20px;
+    font-weight: bold;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+    #btn_cerSession:hover {
+        background: #6DB52E;
+    }
+
 header nav a:hover {
-	background:#6DB52E;
+    background: #6DB52E;
 }
 
 #contenido{
