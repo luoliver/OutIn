@@ -87,6 +87,7 @@
     <Content Include="js\navegar.js" />
     <Content Include="login.aspx" />
     <Content Include="paginas\Empleado\form-Empleado.aspx" />
+    <Content Include="paginas\Empleado\Empleado-Index.aspx" />
     <Content Include="paginas\Producto\form-producto.aspx" />
     <Content Include="paginas\gestionar.html" />
     <Content Include="paginas\modal.html" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="paginas\Empleado\form-Empleado.aspx.designer.cs">
       <DependentUpon>form-Empleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\Empleado\Empleado-Index.aspx.cs">
+      <DependentUpon>Empleado-Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\Empleado\Empleado-Index.aspx.designer.cs">
+      <DependentUpon>Empleado-Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="paginas\Producto\form-producto.aspx.cs">
       <DependentUpon>form-producto.aspx</DependentUpon>

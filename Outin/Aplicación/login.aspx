@@ -10,10 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            
             <asp:Label Text="Usuario: " runat="server" for="txt_usuario"/>
             <asp:TextBox ID="txt_usuario" runat="server" placeholder="ingresa tu usuario"></asp:TextBox>
             <asp:Label Text="Contraseña" runat="server" for="txt_contrasena"/>
-            <asp:TextBox ID="txt_contrasena" runat="server" placeholder="ingresa contraseña"></asp:TextBox>
+            <asp:TextBox ID="txt_contrasena" textmode="Password" runat="server" placeholder="ingresa contraseña"></asp:TextBox>
             <asp:Button ID="btn_ingresar" runat="server" Text="Ingresar" OnClick="btn_ingresar_Click" />
             <asp:Label ID="lbl_info" runat="server" Text=""></asp:Label>
             

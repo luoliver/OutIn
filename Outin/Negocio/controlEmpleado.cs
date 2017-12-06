@@ -11,6 +11,22 @@ namespace Negocio
     {
         OutInDBDataContext data = new OutInDBDataContext();
 
+        public List<listarEmpleadoResult> listarEmpleados()
+        {
+            try
+            {
+                List<listarEmpleadoResult> objLista = data.listarEmpleado().ToList();
+                Codigo = "OK";
+                Rta = "Se realizo correctamente";
+                return objLista;
+            }
+            catch (Exception ex)
+            {
+                Codigo = "Error";
+                Rta = ex.Message;
+                return null;
+            }
+        }
         public bool insertarEmpleado(string identificacion,DateTime nacimiento,string nombre,string contrasena, string tipoID, string direccion, string cargo, string contacto, DateTime fecha_entrada, string estado)
         {
             try

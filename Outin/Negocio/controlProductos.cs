@@ -11,25 +11,25 @@ namespace Negocio
     {
         OutInDBDataContext data = new OutInDBDataContext();
 
-        
 
-        //public bool insertarProducto(string nombre,string marca,int stockMin, int stockMax,double peso,string estado,int categoria)
-        //{
-        //    try
-        //    {
-        //        data.insertarProducto(nombre, marca, stockMin, stockMax, peso, estado, categoria);
-        //        Codigo = "OK";
-        //        Rta = "Se ingreso el producto correctamente";
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Codigo = "Error";
-        //        Rta = ex.Message;
-        //        return false;
-        //    }
 
-        //}
+        public bool insertarProducto(string nombre, string marca, int stockMin, int stockMax, double peso,decimal prCompra,decimal prVenta,string estado,int cantidad, int categoria)
+        {
+            try
+            {
+                data.insertarProducto(nombre, marca, stockMin, stockMax, peso, prCompra, prVenta, estado, cantidad, categoria);
+                Codigo = "OK";
+                Rta = "Se ingreso el producto correctamente";
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Codigo = "Error";
+                Rta = ex.Message;
+                return false;
+            }
+
+        }
     }
     
 }

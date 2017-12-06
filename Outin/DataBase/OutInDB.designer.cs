@@ -60,15 +60,15 @@ namespace DataBase
     partial void InsertOrdenCompra(OrdenCompra instance);
     partial void UpdateOrdenCompra(OrdenCompra instance);
     partial void DeleteOrdenCompra(OrdenCompra instance);
-    partial void InsertProducto(Producto instance);
-    partial void UpdateProducto(Producto instance);
-    partial void DeleteProducto(Producto instance);
     partial void InsertProveedor(Proveedor instance);
     partial void UpdateProveedor(Proveedor instance);
     partial void DeleteProveedor(Proveedor instance);
     partial void InsertTipo(Tipo instance);
     partial void UpdateTipo(Tipo instance);
     partial void DeleteTipo(Tipo instance);
+    partial void InsertProducto(Producto instance);
+    partial void UpdateProducto(Producto instance);
+    partial void DeleteProducto(Producto instance);
     #endregion
 		
 		public OutInDBDataContext() : 
@@ -181,14 +181,6 @@ namespace DataBase
 			}
 		}
 		
-		public System.Data.Linq.Table<Producto> Producto
-		{
-			get
-			{
-				return this.GetTable<Producto>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Proveedor> Proveedor
 		{
 			get
@@ -202,6 +194,14 @@ namespace DataBase
 			get
 			{
 				return this.GetTable<Tipo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Producto> Producto
+		{
+			get
+			{
+				return this.GetTable<Producto>();
 			}
 		}
 		
@@ -261,13 +261,6 @@ namespace DataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarProducto")]
-		public int insertarProducto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMin, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMax, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> peso, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> preCompra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> preVenta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cant, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, marca, stockMin, stockMax, peso, preCompra, preVenta, estado, cant, categoria);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarProveedor")]
 		public int insertarProveedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nomEmpresa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
 		{
@@ -300,6 +293,20 @@ namespace DataBase
 		public int insertarEmpleado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nacimiento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string contrasena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dir, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nacimiento, nombre, contrasena, tipo, dir, cargo, contacto, entrada, estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.listarEmpleado")]
+		public ISingleResult<listarEmpleadoResult> listarEmpleado()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<listarEmpleadoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarProducto")]
+		public int insertarProducto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMin, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stockMax, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> peso, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> preCompra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> preVenta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cant, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> categoria)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, marca, stockMin, stockMax, peso, preCompra, preVenta, estado, cant, categoria);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -1650,9 +1657,9 @@ namespace DataBase
 		
 		private EntityRef<Empleado> _Empleado;
 		
-		private EntityRef<Producto> _Producto;
-		
 		private EntityRef<Tipo> _Tipo;
+		
+		private EntityRef<Producto> _Producto;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1679,8 +1686,8 @@ namespace DataBase
 		public MovimientoInventario()
 		{
 			this._Empleado = default(EntityRef<Empleado>);
-			this._Producto = default(EntityRef<Producto>);
 			this._Tipo = default(EntityRef<Tipo>);
+			this._Producto = default(EntityRef<Producto>);
 			OnCreated();
 		}
 		
@@ -1890,40 +1897,6 @@ namespace DataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Producto_MovimientoInventario", Storage="_Producto", ThisKey="mov_idproducto", OtherKey="pd_idproducto", IsForeignKey=true)]
-		public Producto Producto
-		{
-			get
-			{
-				return this._Producto.Entity;
-			}
-			set
-			{
-				Producto previousValue = this._Producto.Entity;
-				if (((previousValue != value) 
-							|| (this._Producto.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Producto.Entity = null;
-						previousValue.MovimientoInventario.Remove(this);
-					}
-					this._Producto.Entity = value;
-					if ((value != null))
-					{
-						value.MovimientoInventario.Add(this);
-						this._mov_idproducto = value.pd_idproducto;
-					}
-					else
-					{
-						this._mov_idproducto = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Producto");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tipo_MovimientoInventario", Storage="_Tipo", ThisKey="mov_idtipo", OtherKey="ti_idtipo", IsForeignKey=true)]
 		public Tipo Tipo
 		{
@@ -1954,6 +1927,40 @@ namespace DataBase
 						this._mov_idtipo = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tipo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Producto_MovimientoInventario", Storage="_Producto", ThisKey="mov_idproducto", OtherKey="pd_idproducto", IsForeignKey=true)]
+		public Producto Producto
+		{
+			get
+			{
+				return this._Producto.Entity;
+			}
+			set
+			{
+				Producto previousValue = this._Producto.Entity;
+				if (((previousValue != value) 
+							|| (this._Producto.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Producto.Entity = null;
+						previousValue.MovimientoInventario.Remove(this);
+					}
+					this._Producto.Entity = value;
+					if ((value != null))
+					{
+						value.MovimientoInventario.Add(this);
+						this._mov_idproducto = value.pd_idproducto;
+					}
+					else
+					{
+						this._mov_idproducto = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Producto");
 				}
 			}
 		}
@@ -2284,377 +2291,6 @@ namespace DataBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Producto")]
-	public partial class Producto : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _pd_idproducto;
-		
-		private string _pd_nombre;
-		
-		private string _pd_marca;
-		
-		private int _pd_stockmin;
-		
-		private int _pd_stockmax;
-		
-		private double _pd_peso;
-		
-		private decimal _mov_precioventa;
-		
-		private decimal _pd_preciocompra;
-		
-		private string _pd_estado;
-		
-		private int _pd_cantidadproductos;
-		
-		private System.Nullable<int> _pd_idcategoria;
-		
-		private EntitySet<MovimientoInventario> _MovimientoInventario;
-		
-		private EntityRef<Categoria> _Categoria;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onpd_idproductoChanging(int value);
-    partial void Onpd_idproductoChanged();
-    partial void Onpd_nombreChanging(string value);
-    partial void Onpd_nombreChanged();
-    partial void Onpd_marcaChanging(string value);
-    partial void Onpd_marcaChanged();
-    partial void Onpd_stockminChanging(int value);
-    partial void Onpd_stockminChanged();
-    partial void Onpd_stockmaxChanging(int value);
-    partial void Onpd_stockmaxChanged();
-    partial void Onpd_pesoChanging(double value);
-    partial void Onpd_pesoChanged();
-    partial void Onmov_precioventaChanging(decimal value);
-    partial void Onmov_precioventaChanged();
-    partial void Onpd_preciocompraChanging(decimal value);
-    partial void Onpd_preciocompraChanged();
-    partial void Onpd_estadoChanging(string value);
-    partial void Onpd_estadoChanged();
-    partial void Onpd_cantidadproductosChanging(int value);
-    partial void Onpd_cantidadproductosChanged();
-    partial void Onpd_idcategoriaChanging(System.Nullable<int> value);
-    partial void Onpd_idcategoriaChanged();
-    #endregion
-		
-		public Producto()
-		{
-			this._MovimientoInventario = new EntitySet<MovimientoInventario>(new Action<MovimientoInventario>(this.attach_MovimientoInventario), new Action<MovimientoInventario>(this.detach_MovimientoInventario));
-			this._Categoria = default(EntityRef<Categoria>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_idproducto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int pd_idproducto
-		{
-			get
-			{
-				return this._pd_idproducto;
-			}
-			set
-			{
-				if ((this._pd_idproducto != value))
-				{
-					this.Onpd_idproductoChanging(value);
-					this.SendPropertyChanging();
-					this._pd_idproducto = value;
-					this.SendPropertyChanged("pd_idproducto");
-					this.Onpd_idproductoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_nombre", DbType="VarChar(70) NOT NULL", CanBeNull=false)]
-		public string pd_nombre
-		{
-			get
-			{
-				return this._pd_nombre;
-			}
-			set
-			{
-				if ((this._pd_nombre != value))
-				{
-					this.Onpd_nombreChanging(value);
-					this.SendPropertyChanging();
-					this._pd_nombre = value;
-					this.SendPropertyChanged("pd_nombre");
-					this.Onpd_nombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_marca", DbType="VarChar(50)")]
-		public string pd_marca
-		{
-			get
-			{
-				return this._pd_marca;
-			}
-			set
-			{
-				if ((this._pd_marca != value))
-				{
-					this.Onpd_marcaChanging(value);
-					this.SendPropertyChanging();
-					this._pd_marca = value;
-					this.SendPropertyChanged("pd_marca");
-					this.Onpd_marcaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_stockmin", DbType="Int NOT NULL")]
-		public int pd_stockmin
-		{
-			get
-			{
-				return this._pd_stockmin;
-			}
-			set
-			{
-				if ((this._pd_stockmin != value))
-				{
-					this.Onpd_stockminChanging(value);
-					this.SendPropertyChanging();
-					this._pd_stockmin = value;
-					this.SendPropertyChanged("pd_stockmin");
-					this.Onpd_stockminChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_stockmax", DbType="Int NOT NULL")]
-		public int pd_stockmax
-		{
-			get
-			{
-				return this._pd_stockmax;
-			}
-			set
-			{
-				if ((this._pd_stockmax != value))
-				{
-					this.Onpd_stockmaxChanging(value);
-					this.SendPropertyChanging();
-					this._pd_stockmax = value;
-					this.SendPropertyChanged("pd_stockmax");
-					this.Onpd_stockmaxChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_peso", DbType="Float NOT NULL")]
-		public double pd_peso
-		{
-			get
-			{
-				return this._pd_peso;
-			}
-			set
-			{
-				if ((this._pd_peso != value))
-				{
-					this.Onpd_pesoChanging(value);
-					this.SendPropertyChanging();
-					this._pd_peso = value;
-					this.SendPropertyChanged("pd_peso");
-					this.Onpd_pesoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mov_precioventa", DbType="Money NOT NULL")]
-		public decimal mov_precioventa
-		{
-			get
-			{
-				return this._mov_precioventa;
-			}
-			set
-			{
-				if ((this._mov_precioventa != value))
-				{
-					this.Onmov_precioventaChanging(value);
-					this.SendPropertyChanging();
-					this._mov_precioventa = value;
-					this.SendPropertyChanged("mov_precioventa");
-					this.Onmov_precioventaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_preciocompra", DbType="Money NOT NULL")]
-		public decimal pd_preciocompra
-		{
-			get
-			{
-				return this._pd_preciocompra;
-			}
-			set
-			{
-				if ((this._pd_preciocompra != value))
-				{
-					this.Onpd_preciocompraChanging(value);
-					this.SendPropertyChanging();
-					this._pd_preciocompra = value;
-					this.SendPropertyChanged("pd_preciocompra");
-					this.Onpd_preciocompraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string pd_estado
-		{
-			get
-			{
-				return this._pd_estado;
-			}
-			set
-			{
-				if ((this._pd_estado != value))
-				{
-					this.Onpd_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._pd_estado = value;
-					this.SendPropertyChanged("pd_estado");
-					this.Onpd_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_cantidadproductos", DbType="Int NOT NULL")]
-		public int pd_cantidadproductos
-		{
-			get
-			{
-				return this._pd_cantidadproductos;
-			}
-			set
-			{
-				if ((this._pd_cantidadproductos != value))
-				{
-					this.Onpd_cantidadproductosChanging(value);
-					this.SendPropertyChanging();
-					this._pd_cantidadproductos = value;
-					this.SendPropertyChanged("pd_cantidadproductos");
-					this.Onpd_cantidadproductosChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_idcategoria", DbType="Int")]
-		public System.Nullable<int> pd_idcategoria
-		{
-			get
-			{
-				return this._pd_idcategoria;
-			}
-			set
-			{
-				if ((this._pd_idcategoria != value))
-				{
-					if (this._Categoria.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onpd_idcategoriaChanging(value);
-					this.SendPropertyChanging();
-					this._pd_idcategoria = value;
-					this.SendPropertyChanged("pd_idcategoria");
-					this.Onpd_idcategoriaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Producto_MovimientoInventario", Storage="_MovimientoInventario", ThisKey="pd_idproducto", OtherKey="mov_idproducto")]
-		public EntitySet<MovimientoInventario> MovimientoInventario
-		{
-			get
-			{
-				return this._MovimientoInventario;
-			}
-			set
-			{
-				this._MovimientoInventario.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categoria_Producto", Storage="_Categoria", ThisKey="pd_idcategoria", OtherKey="cat_idcategoria", IsForeignKey=true)]
-		public Categoria Categoria
-		{
-			get
-			{
-				return this._Categoria.Entity;
-			}
-			set
-			{
-				Categoria previousValue = this._Categoria.Entity;
-				if (((previousValue != value) 
-							|| (this._Categoria.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Categoria.Entity = null;
-						previousValue.Producto.Remove(this);
-					}
-					this._Categoria.Entity = value;
-					if ((value != null))
-					{
-						value.Producto.Add(this);
-						this._pd_idcategoria = value.cat_idcategoria;
-					}
-					else
-					{
-						this._pd_idcategoria = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Categoria");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_MovimientoInventario(MovimientoInventario entity)
-		{
-			this.SendPropertyChanging();
-			entity.Producto = this;
-		}
-		
-		private void detach_MovimientoInventario(MovimientoInventario entity)
-		{
-			this.SendPropertyChanging();
-			entity.Producto = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Proveedor")]
 	public partial class Proveedor : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2979,6 +2615,377 @@ namespace DataBase
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Producto")]
+	public partial class Producto : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _pd_idproducto;
+		
+		private string _pd_nombre;
+		
+		private string _pd_marca;
+		
+		private int _pd_stockmin;
+		
+		private int _pd_stockmax;
+		
+		private double _pd_peso;
+		
+		private decimal _pd_precioventa;
+		
+		private decimal _pd_preciocompra;
+		
+		private string _pd_estado;
+		
+		private int _pd_cantidadproductos;
+		
+		private System.Nullable<int> _pd_idcategoria;
+		
+		private EntitySet<MovimientoInventario> _MovimientoInventario;
+		
+		private EntityRef<Categoria> _Categoria;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpd_idproductoChanging(int value);
+    partial void Onpd_idproductoChanged();
+    partial void Onpd_nombreChanging(string value);
+    partial void Onpd_nombreChanged();
+    partial void Onpd_marcaChanging(string value);
+    partial void Onpd_marcaChanged();
+    partial void Onpd_stockminChanging(int value);
+    partial void Onpd_stockminChanged();
+    partial void Onpd_stockmaxChanging(int value);
+    partial void Onpd_stockmaxChanged();
+    partial void Onpd_pesoChanging(double value);
+    partial void Onpd_pesoChanged();
+    partial void Onpd_precioventaChanging(decimal value);
+    partial void Onpd_precioventaChanged();
+    partial void Onpd_preciocompraChanging(decimal value);
+    partial void Onpd_preciocompraChanged();
+    partial void Onpd_estadoChanging(string value);
+    partial void Onpd_estadoChanged();
+    partial void Onpd_cantidadproductosChanging(int value);
+    partial void Onpd_cantidadproductosChanged();
+    partial void Onpd_idcategoriaChanging(System.Nullable<int> value);
+    partial void Onpd_idcategoriaChanged();
+    #endregion
+		
+		public Producto()
+		{
+			this._MovimientoInventario = new EntitySet<MovimientoInventario>(new Action<MovimientoInventario>(this.attach_MovimientoInventario), new Action<MovimientoInventario>(this.detach_MovimientoInventario));
+			this._Categoria = default(EntityRef<Categoria>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_idproducto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int pd_idproducto
+		{
+			get
+			{
+				return this._pd_idproducto;
+			}
+			set
+			{
+				if ((this._pd_idproducto != value))
+				{
+					this.Onpd_idproductoChanging(value);
+					this.SendPropertyChanging();
+					this._pd_idproducto = value;
+					this.SendPropertyChanged("pd_idproducto");
+					this.Onpd_idproductoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_nombre", DbType="VarChar(70) NOT NULL", CanBeNull=false)]
+		public string pd_nombre
+		{
+			get
+			{
+				return this._pd_nombre;
+			}
+			set
+			{
+				if ((this._pd_nombre != value))
+				{
+					this.Onpd_nombreChanging(value);
+					this.SendPropertyChanging();
+					this._pd_nombre = value;
+					this.SendPropertyChanged("pd_nombre");
+					this.Onpd_nombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_marca", DbType="VarChar(50)")]
+		public string pd_marca
+		{
+			get
+			{
+				return this._pd_marca;
+			}
+			set
+			{
+				if ((this._pd_marca != value))
+				{
+					this.Onpd_marcaChanging(value);
+					this.SendPropertyChanging();
+					this._pd_marca = value;
+					this.SendPropertyChanged("pd_marca");
+					this.Onpd_marcaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_stockmin", DbType="Int NOT NULL")]
+		public int pd_stockmin
+		{
+			get
+			{
+				return this._pd_stockmin;
+			}
+			set
+			{
+				if ((this._pd_stockmin != value))
+				{
+					this.Onpd_stockminChanging(value);
+					this.SendPropertyChanging();
+					this._pd_stockmin = value;
+					this.SendPropertyChanged("pd_stockmin");
+					this.Onpd_stockminChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_stockmax", DbType="Int NOT NULL")]
+		public int pd_stockmax
+		{
+			get
+			{
+				return this._pd_stockmax;
+			}
+			set
+			{
+				if ((this._pd_stockmax != value))
+				{
+					this.Onpd_stockmaxChanging(value);
+					this.SendPropertyChanging();
+					this._pd_stockmax = value;
+					this.SendPropertyChanged("pd_stockmax");
+					this.Onpd_stockmaxChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_peso", DbType="Float NOT NULL")]
+		public double pd_peso
+		{
+			get
+			{
+				return this._pd_peso;
+			}
+			set
+			{
+				if ((this._pd_peso != value))
+				{
+					this.Onpd_pesoChanging(value);
+					this.SendPropertyChanging();
+					this._pd_peso = value;
+					this.SendPropertyChanged("pd_peso");
+					this.Onpd_pesoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_precioventa", DbType="Money NOT NULL")]
+		public decimal pd_precioventa
+		{
+			get
+			{
+				return this._pd_precioventa;
+			}
+			set
+			{
+				if ((this._pd_precioventa != value))
+				{
+					this.Onpd_precioventaChanging(value);
+					this.SendPropertyChanging();
+					this._pd_precioventa = value;
+					this.SendPropertyChanged("pd_precioventa");
+					this.Onpd_precioventaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_preciocompra", DbType="Money NOT NULL")]
+		public decimal pd_preciocompra
+		{
+			get
+			{
+				return this._pd_preciocompra;
+			}
+			set
+			{
+				if ((this._pd_preciocompra != value))
+				{
+					this.Onpd_preciocompraChanging(value);
+					this.SendPropertyChanging();
+					this._pd_preciocompra = value;
+					this.SendPropertyChanged("pd_preciocompra");
+					this.Onpd_preciocompraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string pd_estado
+		{
+			get
+			{
+				return this._pd_estado;
+			}
+			set
+			{
+				if ((this._pd_estado != value))
+				{
+					this.Onpd_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._pd_estado = value;
+					this.SendPropertyChanged("pd_estado");
+					this.Onpd_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_cantidadproductos", DbType="Int NOT NULL")]
+		public int pd_cantidadproductos
+		{
+			get
+			{
+				return this._pd_cantidadproductos;
+			}
+			set
+			{
+				if ((this._pd_cantidadproductos != value))
+				{
+					this.Onpd_cantidadproductosChanging(value);
+					this.SendPropertyChanging();
+					this._pd_cantidadproductos = value;
+					this.SendPropertyChanged("pd_cantidadproductos");
+					this.Onpd_cantidadproductosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pd_idcategoria", DbType="Int")]
+		public System.Nullable<int> pd_idcategoria
+		{
+			get
+			{
+				return this._pd_idcategoria;
+			}
+			set
+			{
+				if ((this._pd_idcategoria != value))
+				{
+					if (this._Categoria.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onpd_idcategoriaChanging(value);
+					this.SendPropertyChanging();
+					this._pd_idcategoria = value;
+					this.SendPropertyChanged("pd_idcategoria");
+					this.Onpd_idcategoriaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Producto_MovimientoInventario", Storage="_MovimientoInventario", ThisKey="pd_idproducto", OtherKey="mov_idproducto")]
+		public EntitySet<MovimientoInventario> MovimientoInventario
+		{
+			get
+			{
+				return this._MovimientoInventario;
+			}
+			set
+			{
+				this._MovimientoInventario.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categoria_Producto", Storage="_Categoria", ThisKey="pd_idcategoria", OtherKey="cat_idcategoria", IsForeignKey=true)]
+		public Categoria Categoria
+		{
+			get
+			{
+				return this._Categoria.Entity;
+			}
+			set
+			{
+				Categoria previousValue = this._Categoria.Entity;
+				if (((previousValue != value) 
+							|| (this._Categoria.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Categoria.Entity = null;
+						previousValue.Producto.Remove(this);
+					}
+					this._Categoria.Entity = value;
+					if ((value != null))
+					{
+						value.Producto.Add(this);
+						this._pd_idcategoria = value.cat_idcategoria;
+					}
+					else
+					{
+						this._pd_idcategoria = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Categoria");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_MovimientoInventario(MovimientoInventario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Producto = this;
+		}
+		
+		private void detach_MovimientoInventario(MovimientoInventario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Producto = null;
+		}
+	}
+	
 	public partial class validarUsuarioResult
 	{
 		
@@ -3130,6 +3137,158 @@ namespace DataBase
 				if ((this._em_contacto != value))
 				{
 					this._em_contacto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_em_fechaentrada", DbType="Date NOT NULL")]
+		public System.DateTime em_fechaentrada
+		{
+			get
+			{
+				return this._em_fechaentrada;
+			}
+			set
+			{
+				if ((this._em_fechaentrada != value))
+				{
+					this._em_fechaentrada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_em_estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string em_estado
+		{
+			get
+			{
+				return this._em_estado;
+			}
+			set
+			{
+				if ((this._em_estado != value))
+				{
+					this._em_estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class listarEmpleadoResult
+	{
+		
+		private string _em_tipoid;
+		
+		private string _em_identificacion;
+		
+		private string _em_nombre;
+		
+		private string _em_cargo;
+		
+		private string _em_contacto;
+		
+		private System.DateTime _em_fechanacimiento;
+		
+		private System.DateTime _em_fechaentrada;
+		
+		private string _em_estado;
+		
+		public listarEmpleadoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_em_tipoid", DbType="VarChar(40) NOT NULL", CanBeNull=false)]
+		public string em_tipoid
+		{
+			get
+			{
+				return this._em_tipoid;
+			}
+			set
+			{
+				if ((this._em_tipoid != value))
+				{
+					this._em_tipoid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_em_identificacion", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string em_identificacion
+		{
+			get
+			{
+				return this._em_identificacion;
+			}
+			set
+			{
+				if ((this._em_identificacion != value))
+				{
+					this._em_identificacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_em_nombre", DbType="VarChar(70) NOT NULL", CanBeNull=false)]
+		public string em_nombre
+		{
+			get
+			{
+				return this._em_nombre;
+			}
+			set
+			{
+				if ((this._em_nombre != value))
+				{
+					this._em_nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_em_cargo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string em_cargo
+		{
+			get
+			{
+				return this._em_cargo;
+			}
+			set
+			{
+				if ((this._em_cargo != value))
+				{
+					this._em_cargo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_em_contacto", DbType="VarChar(60) NOT NULL", CanBeNull=false)]
+		public string em_contacto
+		{
+			get
+			{
+				return this._em_contacto;
+			}
+			set
+			{
+				if ((this._em_contacto != value))
+				{
+					this._em_contacto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_em_fechanacimiento", DbType="Date NOT NULL")]
+		public System.DateTime em_fechanacimiento
+		{
+			get
+			{
+				return this._em_fechanacimiento;
+			}
+			set
+			{
+				if ((this._em_fechanacimiento != value))
+				{
+					this._em_fechanacimiento = value;
 				}
 			}
 		}
