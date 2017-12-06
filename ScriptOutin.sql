@@ -105,3 +105,4 @@ mov_ubicacion varchar(60) not null,
 mov_cantidadproductos int not null
 )
 go
+
