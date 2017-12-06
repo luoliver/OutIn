@@ -11,11 +11,11 @@ namespace Negocio
     {
         OutInDBDataContext data = new OutInDBDataContext();
 
-        public bool insertarEmpleado(string nacimiento,string nombre, string tipoID, string direccion, string cargo, string contacto, string fecha_entrada, string estado)
+        public bool insertarEmpleado(string identificacion,DateTime nacimiento,string nombre,string contrasena, string tipoID, string direccion, string cargo, string contacto, DateTime fecha_entrada, string estado)
         {
             try
             {
-                data.insertarEmpleado(Convert.ToDateTime(nacimiento), nombre, tipoID, direccion, cargo, contacto, Convert.ToDateTime(fecha_entrada), estado);
+                data.insertarEmpleado(identificacion,nacimiento, nombre,contrasena, tipoID, direccion, cargo, contacto, fecha_entrada, estado);
                 Codigo = "OK";
                 Rta = "Se ingreso el empleado correctamente";
                 return true;

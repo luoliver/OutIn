@@ -31,6 +31,24 @@ namespace Aplicación.paginas.Empleado {
         protected global::System.Web.UI.WebControls.Label lbl_titulo;
         
         /// <summary>
+        /// Control lbl_identificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_identificacion;
+        
+        /// <summary>
+        /// Control txt_identificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_identificacion;
+        
+        /// <summary>
         /// Control lbl_nombre.
         /// </summary>
         /// <remarks>
@@ -49,112 +67,130 @@ namespace Aplicación.paginas.Empleado {
         protected global::System.Web.UI.WebControls.TextBox txt_Nombre;
         
         /// <summary>
-        /// Control lbl_Marca.
+        /// Control lbl_Contrasena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Marca;
+        protected global::System.Web.UI.WebControls.Label lbl_Contrasena;
         
         /// <summary>
-        /// Control txt_Marca.
+        /// Control txt_Contrasena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Marca;
+        protected global::System.Web.UI.WebControls.TextBox txt_Contrasena;
         
         /// <summary>
-        /// Control lbl_stockMin.
+        /// Control lbl_tipoId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_stockMin;
+        protected global::System.Web.UI.WebControls.Label lbl_tipoId;
         
         /// <summary>
-        /// Control txt_StockMin.
+        /// Control DropDownList_tipoId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_StockMin;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_tipoId;
         
         /// <summary>
-        /// Control lbl_stockMax.
+        /// Control lbl_direccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_stockMax;
+        protected global::System.Web.UI.WebControls.Label lbl_direccion;
         
         /// <summary>
-        /// Control txt_StockMax.
+        /// Control txt_direccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_StockMax;
+        protected global::System.Web.UI.WebControls.TextBox txt_direccion;
         
         /// <summary>
-        /// Control lbl_preCompra.
+        /// Control lbl_cargo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_preCompra;
+        protected global::System.Web.UI.WebControls.Label lbl_cargo;
         
         /// <summary>
-        /// Control txt_preCompra.
+        /// Control txt_cargo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_preCompra;
+        protected global::System.Web.UI.WebControls.TextBox txt_cargo;
         
         /// <summary>
-        /// Control lbl_preVenta.
+        /// Control lbl_Contacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_preVenta;
+        protected global::System.Web.UI.WebControls.Label lbl_Contacto;
         
         /// <summary>
-        /// Control txt_preVenta.
+        /// Control txt_contacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_preVenta;
+        protected global::System.Web.UI.WebControls.TextBox txt_contacto;
         
         /// <summary>
-        /// Control lbl_peso.
+        /// Control lbl_fechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_peso;
+        protected global::System.Web.UI.WebControls.Label lbl_fechaNacimiento;
         
         /// <summary>
-        /// Control txt_Peso.
+        /// Control cal_fecNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Peso;
+        protected global::System.Web.UI.WebControls.Calendar cal_fecNacimiento;
+        
+        /// <summary>
+        /// Control lbl_fechaIngreso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_fechaIngreso;
+        
+        /// <summary>
+        /// Control cal_fecIngreso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar cal_fecIngreso;
         
         /// <summary>
         /// Control lbl_estado.
@@ -175,42 +211,6 @@ namespace Aplicación.paginas.Empleado {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Estado;
         
         /// <summary>
-        /// Control lblCantidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCantidad;
-        
-        /// <summary>
-        /// Control txt_cantidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cantidad;
-        
-        /// <summary>
-        /// Control lbl_categoria.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_categoria;
-        
-        /// <summary>
-        /// Control DropDownList_Categoria.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Categoria;
-        
-        /// <summary>
         /// Control btn_insertarProducto.
         /// </summary>
         /// <remarks>
@@ -218,5 +218,14 @@ namespace Aplicación.paginas.Empleado {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_insertarProducto;
+        
+        /// <summary>
+        /// Control lbl_info.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_info;
     }
 }

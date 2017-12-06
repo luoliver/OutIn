@@ -159,17 +159,6 @@
     <Parameter Name="cant" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.insertarEmpleado" Method="insertarEmpleado">
-    <Parameter Name="nacimiento" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="nombre" Type="System.String" DbType="VarChar(70)" />
-    <Parameter Name="tipo" Type="System.String" DbType="VarChar(40)" />
-    <Parameter Name="dir" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="cargo" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="contacto" Type="System.String" DbType="VarChar(60)" />
-    <Parameter Name="entrada" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.insertarListaChequeo" Method="insertarListaChequeo">
     <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
     <Parameter Name="items" Type="System.Int32" DbType="Int" />
@@ -244,5 +233,18 @@
       <Column Name="em_fechaentrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="em_estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.insertarEmpleado" Method="insertarEmpleado">
+    <Parameter Name="id" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="nacimiento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="contrasena" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="dir" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cargo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contacto" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="entrada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

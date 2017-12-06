@@ -240,13 +240,6 @@ namespace DataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarEmpleado")]
-		public int insertarEmpleado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nacimiento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dir, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nacimiento, nombre, tipo, dir, cargo, contacto, entrada, estado);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarListaChequeo")]
 		public int insertarListaChequeo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> items, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> serie, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string pregunta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> calificacion)
 		{
@@ -301,6 +294,13 @@ namespace DataBase
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contrasena);
 			return ((ISingleResult<validarUsuarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarEmpleado")]
+		public int insertarEmpleado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nacimiento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(70)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string contrasena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dir, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nacimiento, nombre, contrasena, tipo, dir, cargo, contacto, entrada, estado);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
