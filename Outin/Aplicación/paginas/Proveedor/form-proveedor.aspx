@@ -45,7 +45,7 @@
                 </tr>     
                  <tr>
                     <td colspan="2">
-                        <asp:Button ID="btn_insertarProducto" runat="server" Text="Insertar Producto" OnClick="btn_insertarProducto_Click" /></td>                    
+                        <asp:Button ID="btn_insertarProveedor" runat="server" Text="Insertar Proveedor" OnClick="btn_insertarProveedor_Click" /></td>                    
                 </tr>  
             </table>
         </div>

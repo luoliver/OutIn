@@ -11,11 +11,11 @@ namespace Negocio
     {
         OutInDBDataContext data = new OutInDBDataContext();
 
-        public List<listarEmpleadoResult> listarEmpleados()
+        public List<listProveedorResult> listarProveedores()
         {
             try
             {
-                List<listarEmpleadoResult> objLista = data.listarEmpleado().ToList();
+                List<listProveedorResult> objLista = data.listProveedor().ToList();
                 Codigo = "OK";
                 Rta = "Se realizo correctamente";
                 return objLista;

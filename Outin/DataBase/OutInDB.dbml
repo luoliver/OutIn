@@ -258,4 +258,12 @@
     <Parameter Name="nomEmpresa" Type="System.String" DbType="VarChar(70)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.listProveedor" Method="listProveedor">
+    <ElementType Name="listProveedorResult">
+      <Column Name="[Nombre Empresa]" Member="Nombre_Empresa" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="[Direccion Empresa]" Member="Direccion_Empresa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Numero de Contacto]" Member="Numero_de_Contacto" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Estado del proveedor]" Member="Estado_del_proveedor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

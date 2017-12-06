@@ -309,6 +309,13 @@ namespace DataBase
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado, contacto, direccion, nomEmpresa);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.listProveedor")]
+		public ISingleResult<listProveedorResult> listProveedor()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<listProveedorResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CambioCliente")]
@@ -3321,6 +3328,86 @@ namespace DataBase
 				if ((this._em_estado != value))
 				{
 					this._em_estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class listProveedorResult
+	{
+		
+		private string _Nombre_Empresa;
+		
+		private string _Direccion_Empresa;
+		
+		private long _Numero_de_Contacto;
+		
+		private System.Nullable<bool> _Estado_del_proveedor;
+		
+		public listProveedorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nombre Empresa]", Storage="_Nombre_Empresa", DbType="VarChar(70) NOT NULL", CanBeNull=false)]
+		public string Nombre_Empresa
+		{
+			get
+			{
+				return this._Nombre_Empresa;
+			}
+			set
+			{
+				if ((this._Nombre_Empresa != value))
+				{
+					this._Nombre_Empresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Direccion Empresa]", Storage="_Direccion_Empresa", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Direccion_Empresa
+		{
+			get
+			{
+				return this._Direccion_Empresa;
+			}
+			set
+			{
+				if ((this._Direccion_Empresa != value))
+				{
+					this._Direccion_Empresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Numero de Contacto]", Storage="_Numero_de_Contacto", DbType="BigInt NOT NULL")]
+		public long Numero_de_Contacto
+		{
+			get
+			{
+				return this._Numero_de_Contacto;
+			}
+			set
+			{
+				if ((this._Numero_de_Contacto != value))
+				{
+					this._Numero_de_Contacto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Estado del proveedor]", Storage="_Estado_del_proveedor", DbType="Bit")]
+		public System.Nullable<bool> Estado_del_proveedor
+		{
+			get
+			{
+				return this._Estado_del_proveedor;
+			}
+			set
+			{
+				if ((this._Estado_del_proveedor != value))
+				{
+					this._Estado_del_proveedor = value;
 				}
 			}
 		}

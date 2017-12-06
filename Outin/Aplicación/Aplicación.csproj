@@ -92,6 +92,7 @@
     <Content Include="paginas\gestionar.html" />
     <Content Include="paginas\modal.html" />
     <Content Include="paginas\Proveedor\form-proveedor.aspx" />
+    <Content Include="paginas\Proveedor\Proveedor-index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +130,13 @@
     </Compile>
     <Compile Include="paginas\Proveedor\form-proveedor.aspx.designer.cs">
       <DependentUpon>form-proveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\Proveedor\Proveedor-index.aspx.cs">
+      <DependentUpon>Proveedor-index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\Proveedor\Proveedor-index.aspx.designer.cs">
+      <DependentUpon>Proveedor-index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
