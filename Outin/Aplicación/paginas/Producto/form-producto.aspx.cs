@@ -14,6 +14,10 @@ namespace Aplicación.paginas
         controlProductos producto = new controlProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             DropDownList_Estado.Items.Add("Activo");
             DropDownList_Estado.Items.Add("Inactivo");
             DropDownList_Categoria.Items.Add("1");

@@ -15,6 +15,13 @@ namespace Aplicación
             {
                 Response.Redirect("login.aspx");
             }
+            else
+            {
+                string script = @"<script type='text/javascript'>
+                            asignarbotones();
+                        </script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "asignarbotones", script, false);
+            }
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)

@@ -13,6 +13,10 @@ namespace Aplicación.paginas.Empleado
         controlEmpleado emp = new controlEmpleado();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             Llenartable();
         }
         public void Llenartable()

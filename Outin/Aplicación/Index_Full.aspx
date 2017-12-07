@@ -6,13 +6,13 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="icon" type="image/png" href="imagenes/logo-caja.png" />
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/modal.css">
-<link rel="stylesheet" href="css/tablas.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/buscar.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+<link rel="stylesheet" href="css/footer.css"/>
+<link rel="stylesheet" href="css/header.css"/>
+<link rel="stylesheet" href="css/modal.css"/>
+<link rel="stylesheet" href="css/tablas.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="css/buscar.css"/>
     
 <title>Outin</title>
 </head>
@@ -21,14 +21,14 @@
         <div>
             <header>
 		<div class="wrapper">
-			<div class="logo"><img src="imagenes/logo.png" alt=""></div>
+			<div class="logo"><img src="imagenes/logo.png" alt=""/></div>
 			
 			<nav>
 				<a href="#" id="inicio">Inicio</a>
 				<a href="#" id="nuevo">Nuevo producto</a>
-				<a href="#" id="gestionar">Gestionar productos</a>
+				<a href="#" id="empleado">Gestionar Empleados</a>
 				<a href="#" id="cambios">Cambios</a>
-                <asp:button runat="server" text="CerrarSession" OnClick="Unnamed1_Click" ID="btn_cerSession" />
+                <asp:button runat="server" text="Cerrar Session" OnClick="Unnamed1_Click" ID="btn_cerSession" />
 			</nav>
 		</div>
 	</header>
@@ -39,7 +39,7 @@
 	
 	<footer>
 			<h5>Designed by Outin</h5>	
-		    <a href="">Contactenos</a>
+		    <a>Contactenos</a>
 	</footer>
 	<script src="js/navegar.js"></script>
         </div>

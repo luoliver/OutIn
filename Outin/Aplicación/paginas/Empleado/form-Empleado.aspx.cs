@@ -15,6 +15,10 @@ namespace Aplicación.paginas.Empleado
         Respuesta rsp = new Respuesta();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             DropDownList_Estado.Items.Add("Activo");
             DropDownList_Estado.Items.Add("Inactivo");
             DropDownList_tipoId.Items.Add("C.C.");
